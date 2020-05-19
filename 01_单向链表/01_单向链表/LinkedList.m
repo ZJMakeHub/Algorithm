@@ -34,8 +34,8 @@ typedef struct node {
     self = [super init];
     if (self) {
         Node *head = (Node *)malloc(sizeof(Node));
-        head->data = NULL;
-        head->next = NULL;
+//        head->data = NULL;
+//        head->next = NULL;
         self.head = head;
         self.size = 0;
     }
