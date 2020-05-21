@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LinkedList.h"
+#import "CirleLinkedList.h"
 
 @interface ViewController ()
 
@@ -19,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    LinkedList *linkList = [[LinkedList alloc] init];
+    CirleLinkedList *linkList = [[CirleLinkedList alloc] init];
     [linkList addObjectAtLast:@(1)];
     [linkList addObjectAtLast:@(2)];
     [linkList addObjectAtLast:@(3)];
@@ -29,6 +30,26 @@
     
     NSLog(@"%@",[linkList list_display]);
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self josephus];
+}
+
+// 哟瑟夫问题
+- (void)josephus {
+    CirleLinkedList *linkList = [[CirleLinkedList alloc] init];
+    for (int i = 1; i<=8; i++) {
+        [linkList addObjectAtLast:@(i)];
+    }
+    NSLog(@"%@",[linkList list_display]);
+    [linkList resetNode];
+    while (![linkList isEmpty]) {
+        [linkList nextNode];
+        [linkList nextNode];
+        NSLog(@"%@",[linkList removeNode]);
+    }
+}
+
 
 
 @end
