@@ -93,6 +93,10 @@
     _size++;
 }
 
+- (void)remove:(id)element {
+    
+}
+
 #pragma mark - 遍历
 // 前序遍历: 根节点，左子树，右子树
 - (void)preorderTraversal {

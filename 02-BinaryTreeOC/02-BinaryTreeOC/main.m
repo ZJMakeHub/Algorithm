@@ -9,7 +9,7 @@
 
 // LinkedList
 #import "ZJSingleLinkedList.h"
-
+#import "ZJDoubleLinkedList.h"
 // Tree
 #import "MJBinaryTrees.h"
 #import "ZJBinarySearchTree.h"
@@ -28,7 +28,7 @@ void BSTTest() {
 }
 
 
-void linkedListTest() {
+void SingleLinkedListTest() {
     ZJSingleLinkedList *list = [[ZJSingleLinkedList alloc] init];
     [list add:@(20)];
     [list add:0 element:@(10)];
@@ -40,11 +40,25 @@ void linkedListTest() {
     NSLog(@"%@",[list toString]);
 }
 
+void DoubleLinkedListTest() {
+    ZJDoubleLinkedList *list = [[ZJDoubleLinkedList alloc] init];
+    [list add:@(20)];
+    [list add:0 element:@(10)];
+    [list add:@(30)];
+    [list add:[list size] element:@(40)];
+    
+    [list remove:1];
+    
+    NSLog(@"%@",[list toString]);
+}
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
 //        BSTTest();
-        linkedListTest();
+//        SingleLinkedListTest();
+        DoubleLinkedListTest();
     }
     return 0;
 }

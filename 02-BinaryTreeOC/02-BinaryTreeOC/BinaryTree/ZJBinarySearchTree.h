@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-
 typedef int (^MJBSTComparatorBlock)(id e1, id e2);
 
 @interface ZJBinarySearchTree : NSObject <MJBinaryTreeInfo>
