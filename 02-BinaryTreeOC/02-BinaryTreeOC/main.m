@@ -17,7 +17,7 @@
 
 
 void BSTTest() {
-    int data[] = { 8, 12, 5, 3, 11, 36};
+    int data[] = { 8, 12, 5, 3, 11, 36, 6};
     int len = sizeof(data) / sizeof(int);
     
     ZJBinarySearchTree *bst = [ZJBinarySearchTree tree];
@@ -26,7 +26,9 @@ void BSTTest() {
     }
     [MJBinaryTrees println:bst];
     printf("---------------------------------\n");
-    [bst levelOrderTraversal];
+//    [bst levelOrderTraversal];
+    [bst remove:@(8)];
+    [MJBinaryTrees println:bst];
 }
 
 

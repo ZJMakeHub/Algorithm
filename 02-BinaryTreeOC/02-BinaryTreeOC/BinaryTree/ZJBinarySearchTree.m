@@ -26,6 +26,14 @@
     return  node;
 }
 
+- (BOOL)hasTwoChildren {
+    return _left != nil && _right != nil;
+}
+
+- (BOOL)isLeaf {
+    return _left == nil && _right == nil;
+}
+
 @end
 
 @interface ZJBinarySearchTree() {
@@ -94,8 +102,73 @@
     _size++;
 }
 
+/**
+ * 叶子节点直接删除
+ *
+ * 度==1节点，子节点替代原节点的位置
+ *
+ * 度==2节点，前驱节点值覆盖原节点的值，再删除对应的前驱节点
+ */
 - (void)remove:(id)element {
+    [self removeNode:[self node:element]];
+}
+
+// 删除节点
+- (void)removeNode:(ZJBSTNode *)node {
+    if (node == nil) return;
     
+    _size--;
+    
+    // 度==2
+    if ([node hasTwoChildren]) {
+        // 拿到前驱节点
+        ZJBSTNode *p = [self predecessor:node];
+        // 前驱节点值覆盖原节点的值
+        node->_element = p->_element;
+        // 替换，删除p
+        node = p;
+    }
+    
+    // 删除度==1或者度==0
+    // 度==1的节点，要么是左，要么是右
+    ZJBSTNode *replacement = (node->_left != nil) ? (node->_left) : (node->_right);
+    
+    if (replacement != nil) { // 度== 1
+        replacement->_parent = node->_parent;
+        if (node->_parent == nil) { // node度=1 且 node=root
+            _root = replacement;
+        } else if (node == node->_parent->_left) {
+            node->_parent->_left = replacement;
+        } else if (node == node->_parent->_right) {
+            node->_parent->_right = replacement;
+        }
+    } else if (node->_parent == nil) { // 根节点
+        _root = nil;
+    } else { // node叶子节点 且 不是根节点
+        if (node == node->_parent->_left) {
+            node->_parent->_left = nil;
+        } else {
+            node->_parent->_right = nil;
+        }
+    }
+    
+}
+
+// 获取节点
+- (ZJBSTNode *)node:(id)element {
+    ZJBSTNode *node = _root;
+    while (node != nil) {
+        int cmp = [self _compare:element e2:node->_element];
+        if (cmp == 0) {
+            return node;
+        }
+        if (cmp > 0) {
+            node = node->_right;
+        } else {
+            node = node->_left;
+        }
+    }
+    return nil;
 }
 
 #pragma mark - 遍历
@@ -155,6 +228,28 @@
         }
     }
 }
+
+#pragma mark - 中序遍历中前驱节点
+- (ZJBSTNode *)predecessor:(ZJBSTNode *)node {
+    if (node == nil) return NULL;
+    
+    // 前驱节点在左子树上(left.right.right...)
+    ZJBSTNode *p = node->_left;
+    if (p != nil) {
+        while (p->_right != nil) {
+            p = p->_right;
+        }
+        return p;
+    }
+    
+    // 前驱节点在祖节点上
+    while ((node->_parent != nil) && (node = node->_parent->_left)) {
+        node = node->_parent;
+    }
+    
+    return node->_parent;
+}
+
 
 #pragma mark - 比较方法
 - (int)_compare:(id)e1 e2:(id)e2 {
