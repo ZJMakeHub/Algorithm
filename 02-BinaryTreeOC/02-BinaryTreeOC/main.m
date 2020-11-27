@@ -26,6 +26,7 @@ void BSTTest() {
     }
     [MJBinaryTrees println:bst];
     printf("---------------------------------\n");
+    [bst levelOrderTraversal];
 }
 
 
@@ -71,10 +72,10 @@ void QueueTest() {
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-//        BSTTest();
+        BSTTest();
 //        SingleLinkedListTest();
 //        DoubleLinkedListTest();
-        QueueTest();
+//        QueueTest();
     }
     return 0;
 }

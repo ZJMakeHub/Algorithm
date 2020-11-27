@@ -27,6 +27,7 @@ typedef int (^MJBSTComparatorBlock)(id e1, id e2);
 - (void)preorderTraversal;
 - (void)inorderTraversal;
 - (void)postorderTraversal;
+- (void)levelOrderTraversal;
 
 @end
 

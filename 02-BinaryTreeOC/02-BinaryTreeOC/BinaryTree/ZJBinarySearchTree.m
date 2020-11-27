@@ -6,6 +6,7 @@
 //
 
 #import "ZJBinarySearchTree.h"
+#import "ZJQueue.h"
 
 @interface ZJBSTNode : NSObject {
 @public
@@ -134,11 +135,25 @@
     NSLog(@"%@",node->_element);
 }
 
-// 层序遍历：一层一层遍历
+// 层序遍历：从上至下一层一层遍历
 - (void)levelOrderTraversal {
     if (!_root) return;
     
+    ZJQueue *queue = [[ZJQueue alloc] init];
+    [queue enQueue:_root];
     
+    while (![queue isEmpty]) {
+        ZJBSTNode *node = [queue deQueue];
+        NSLog(@"%@",node->_element);
+        
+        if (node->_left != nil) {
+            [queue enQueue:node->_left];
+        }
+        
+        if (node->_right != nil) {
+            [queue enQueue:node->_right];
+        }
+    }
 }
 
 #pragma mark - 比较方法
