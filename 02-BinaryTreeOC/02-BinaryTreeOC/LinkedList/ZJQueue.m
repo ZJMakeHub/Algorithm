@@ -6,27 +6,40 @@
 //
 
 #import "ZJQueue.h"
+#import "ZJDoubleLinkedList.h"
+
+@interface ZJQueue () {
+    ZJDoubleLinkedList *_list;
+}
+@end
 
 @implementation ZJQueue
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _list = [[ZJDoubleLinkedList alloc] init];
+    }
+    return self;
+}
+
 - (int)size {
-    return 1;
+    return [_list size];
 }
 
 - (BOOL)isEmpty {
-    return true;
+    return [_list isEmpty];
 }
 
 - (void)enQueue:(id)element {
-    
+    [_list add:element];
 }
 
-- (void)deQueue {
-    
+- (id)deQueue {
+    return [_list remove:0];
 }
 
 - (id)front {
-    return @"";
+    return [_list get:0];
 }
 
 - (void)clear {

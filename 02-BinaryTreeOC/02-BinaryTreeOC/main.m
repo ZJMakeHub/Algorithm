@@ -10,6 +10,7 @@
 // LinkedList
 #import "ZJSingleLinkedList.h"
 #import "ZJDoubleLinkedList.h"
+#import "ZJQueue.h"
 // Tree
 #import "MJBinaryTrees.h"
 #import "ZJBinarySearchTree.h"
@@ -52,13 +53,28 @@ void DoubleLinkedListTest() {
     NSLog(@"%@",[list toString]);
 }
 
+void QueueTest() {
+    ZJQueue *queue = [[ZJQueue alloc] init];
+    [queue enQueue:@(11)];
+    [queue enQueue:@(22)];
+    [queue enQueue:@(33)];
+    [queue enQueue:@(44)];
+    [queue enQueue:@(66)];
+    [queue enQueue:@(22)];
+    [queue enQueue:@(99)];
+    
+    while (![queue isEmpty]) {
+        NSLog(@"%@",[queue deQueue]);
+    }
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
 //        BSTTest();
 //        SingleLinkedListTest();
-        DoubleLinkedListTest();
+//        DoubleLinkedListTest();
+        QueueTest();
     }
     return 0;
 }

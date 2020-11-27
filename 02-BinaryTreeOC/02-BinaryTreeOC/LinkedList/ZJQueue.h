@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (int)size;
 - (BOOL)isEmpty;
 - (void)enQueue:(id)element; //入队
-- (void)deQueue; // 出队
+- (id)deQueue; // 出队
 - (id)front; // 获取队头元素
 - (void)clear;
 
