@@ -14,10 +14,26 @@
 // Tree
 #import "MJBinaryTrees.h"
 #import "ZJBinarySearchTree.h"
+#import "ZJAVLTree.h"
+
+void AVLTTest() {
+    int data[] = { 8, 12, 5, 3, 11, 36, 6, 20, 26};
+    int len = sizeof(data) / sizeof(int);
+    
+    ZJAVLTree *avlt = [ZJAVLTree tree];
+    for (int i = 0; i < len; i++) {
+        [avlt add:@(data[i])];
+    }
+    [MJBinaryTrees println:avlt];
+    printf("---------------------------------\n");
+    [avlt add:@(10)];
+    [MJBinaryTrees println:avlt];
+
+}
 
 
 void BSTTest() {
-    int data[] = { 8, 12, 5, 3, 11, 36, 6};
+    int data[] = { 8, 12, 5, 3, 11, 36, 6, 20, 26};
     int len = sizeof(data) / sizeof(int);
     
     ZJBinarySearchTree *bst = [ZJBinarySearchTree tree];
@@ -27,8 +43,8 @@ void BSTTest() {
     [MJBinaryTrees println:bst];
     printf("---------------------------------\n");
 //    [bst levelOrderTraversal];
-    [bst remove:@(8)];
-    [MJBinaryTrees println:bst];
+//    [bst remove:@(8)];
+//    [MJBinaryTrees println:bst];
 }
 
 
@@ -74,10 +90,11 @@ void QueueTest() {
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        BSTTest();
+//        BSTTest();
 //        SingleLinkedListTest();
 //        DoubleLinkedListTest();
 //        QueueTest();
+        AVLTTest();
     }
     return 0;
 }

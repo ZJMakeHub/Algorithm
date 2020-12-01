@@ -7,34 +7,7 @@
 
 #import "ZJBinarySearchTree.h"
 #import "ZJQueue.h"
-
-@interface ZJBSTNode : NSObject {
-@public
-    id _element;
-    ZJBSTNode *_left;
-    ZJBSTNode *_right;
-    __weak ZJBSTNode *_parent;
-}
-@end
-
-@implementation ZJBSTNode
-
-+ (instancetype)nodeWithElement:(id)element parent:(ZJBSTNode *)parent {
-    ZJBSTNode *node = [[self alloc] init];
-    node->_element = element;
-    node->_parent = parent;
-    return  node;
-}
-
-- (BOOL)hasTwoChildren {
-    return _left != nil && _right != nil;
-}
-
-- (BOOL)isLeaf {
-    return _left == nil && _right == nil;
-}
-
-@end
+#import "ZJBSTNode.h"
 
 @interface ZJBinarySearchTree() {
     NSUInteger _size;
