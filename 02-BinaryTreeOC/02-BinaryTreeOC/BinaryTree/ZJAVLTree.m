@@ -150,6 +150,7 @@
  * node 是新添加的节点
  *
  * LL，RR，LR，RL四种情况：通过parent找失衡因子
+ *
  */
 - (void)afterAdd:(ZJAVLNode *)node {
     while ((node = node->_parent) != nil) {
@@ -197,6 +198,8 @@
 
 /**
  * 左旋转操作
+ *
+ * 注意需要维护：c，p, g的parent属性，高度属性（从低到高更新）
  */
 - (void)rotateLeft:(ZJAVLNode *)grand {
     ZJAVLNode *parent = grand->_right;

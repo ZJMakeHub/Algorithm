@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1659D4D3257634170004C0A1 /* ZJB-Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 1659D4D2257634170004C0A1 /* ZJB-Tree.m */; };
 		166D80322570E363006BD6FD /* ZJAVLTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 166D80312570E363006BD6FD /* ZJAVLTree.m */; };
 		166D80362570E95B006BD6FD /* ZJBSTNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 166D80352570E95B006BD6FD /* ZJBSTNode.m */; };
+		16A0B189257783930050FF5D /* ZJRedBTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0B188257783930050FF5D /* ZJRedBTree.m */; };
 		16A2FBA6256F443C007C89DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2FBA5256F443C007C89DD /* main.m */; };
 		16A2FBBA256F4452007C89DD /* MJInorderPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2FBB1256F4452007C89DD /* MJInorderPrinter.m */; };
 		16A2FBBB256F4452007C89DD /* MJLevelOrderPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2FBB3256F4452007C89DD /* MJLevelOrderPrinter.m */; };
@@ -34,10 +36,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1659D4D1257634170004C0A1 /* ZJB-Tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZJB-Tree.h"; sourceTree = "<group>"; };
+		1659D4D2257634170004C0A1 /* ZJB-Tree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZJB-Tree.m"; sourceTree = "<group>"; };
 		166D80302570E363006BD6FD /* ZJAVLTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAVLTree.h; sourceTree = "<group>"; };
 		166D80312570E363006BD6FD /* ZJAVLTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAVLTree.m; sourceTree = "<group>"; };
 		166D80342570E95B006BD6FD /* ZJBSTNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBSTNode.h; sourceTree = "<group>"; };
 		166D80352570E95B006BD6FD /* ZJBSTNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBSTNode.m; sourceTree = "<group>"; };
+		16A0B187257783930050FF5D /* ZJRedBTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJRedBTree.h; sourceTree = "<group>"; };
+		16A0B188257783930050FF5D /* ZJRedBTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJRedBTree.m; sourceTree = "<group>"; };
 		16A2FBA2256F443C007C89DD /* 02-BinaryTreeOC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "02-BinaryTreeOC"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2FBA5256F443C007C89DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16A2FBAE256F4452007C89DD /* MJBinaryTrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJBinaryTrees.h; sourceTree = "<group>"; };
@@ -134,6 +140,10 @@
 				16A2FBC3256F467A007C89DD /* ZJBinarySearchTree.m */,
 				166D80302570E363006BD6FD /* ZJAVLTree.h */,
 				166D80312570E363006BD6FD /* ZJAVLTree.m */,
+				1659D4D1257634170004C0A1 /* ZJB-Tree.h */,
+				1659D4D2257634170004C0A1 /* ZJB-Tree.m */,
+				16A0B187257783930050FF5D /* ZJRedBTree.h */,
+				16A0B188257783930050FF5D /* ZJRedBTree.m */,
 			);
 			path = BinaryTree;
 			sourceTree = "<group>";
@@ -210,10 +220,12 @@
 				16A2FBCF256F798C007C89DD /* ZJDoubleLinkedList.m in Sources */,
 				166D80362570E95B006BD6FD /* ZJBSTNode.m in Sources */,
 				16A2FBBB256F4452007C89DD /* MJLevelOrderPrinter.m in Sources */,
+				1659D4D3257634170004C0A1 /* ZJB-Tree.m in Sources */,
 				16A2FBBD256F4452007C89DD /* MJBinaryTrees.m in Sources */,
 				16A2FBBC256F4452007C89DD /* MJPrinter.m in Sources */,
 				166D80322570E363006BD6FD /* ZJAVLTree.m in Sources */,
 				16A2FBD4256F7A8F007C89DD /* ZJSingleLinkedList.m in Sources */,
+				16A0B189257783930050FF5D /* ZJRedBTree.m in Sources */,
 				16A2FBC4256F467A007C89DD /* ZJBinarySearchTree.m in Sources */,
 				16A2FBBE256F4452007C89DD /* NSString+Trees.m in Sources */,
 				16A2FBCB256F785E007C89DD /* ZJQueue.m in Sources */,
