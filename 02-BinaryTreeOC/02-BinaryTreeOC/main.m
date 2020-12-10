@@ -15,6 +15,19 @@
 #import "MJBinaryTrees.h"
 #import "ZJBinarySearchTree.h"
 #import "ZJAVLTree.h"
+#import "ZJRedBTree.h"
+
+
+void RedBTTest() {
+    int data[] = { 55, 87, 56, 74, 96, 22, 62, 20, 70, 68, 90, 50};
+    int len = sizeof(data) / sizeof(int);
+    
+    ZJRedBTree *avlt = [ZJRedBTree tree];
+    for (int i = 0; i < len; i++) {
+        [avlt add:@(data[i])];
+    }
+    [MJBinaryTrees println:avlt];
+}
 
 void AVLTTest() {
     int data[] = { 8, 12, 5, 3, 11, 36, 6, 20, 26};
@@ -94,7 +107,8 @@ int main(int argc, const char * argv[]) {
 //        SingleLinkedListTest();
 //        DoubleLinkedListTest();
 //        QueueTest();
-        AVLTTest();
+//        AVLTTest();
+        RedBTTest();
     }
     return 0;
 }
